@@ -41,8 +41,9 @@ struct LFLock
 {
     std::atomic_flag flag;
 
-    LFLock() : flag{false}
+    LFLock()
     {
+        flag.clear();
     }
 
     ALWAYS_INLINE void lock()
