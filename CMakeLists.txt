@@ -54,7 +54,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (UNIX)
-    set(CMAKE_CXX_FLAGS "-D__const__=  -fPIC -fno-strict-aliasing -Wall ${CMAKE_CXX_FLAGS}")
+    set(CMAKE_CXX_FLAGS "-fPIC -fno-strict-aliasing -Wall ${CMAKE_CXX_FLAGS}")
     set(CMAKE_CXX_FLAGS_DEBUG "-g")
     set(CMAKE_CXX_FLAGS_RELEASE "-g -O3 -DNDEBUG")
 
