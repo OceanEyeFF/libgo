@@ -204,7 +204,9 @@ class ErrnoStore {
 public:
     ErrnoStore() : restored_(false) {
 #if defined(LIBGO_SYS_Windows)
+#if not defined(NO_HOOK)
 		wsaErr_ = WSAGetLastError();
+#endif
 #endif
 		errno_ = errno;
 	}
@@ -215,7 +217,9 @@ public:
         if (restored_) return ;
         restored_ = true;
 #if defined(LIBGO_SYS_Windows)
+#if not defined(NO_HOOK)
 		WSASetLastError(wsaErr_);
+#endif
 #endif
         errno = errno_;
     }
